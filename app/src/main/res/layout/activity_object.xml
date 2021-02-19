@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:background="@color/white"
+    tools:context=".ui.ObjectActivity">
+
+    <Button
+        android:id="@+id/btFade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fade"
+        android:onClick="fadeAnimation"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btSequentially"
+        app:layout_constraintEnd_toStartOf="@+id/btSequentially"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btSequentially"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/sequentially"
+        android:onClick="sequentialAnimation"
+        app:layout_constraintBottom_toTopOf="@+id/btTranslate"
+        app:layout_constraintEnd_toStartOf="@+id/btScale"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btFade" />
+
+    <Button
+        android:id="@+id/btScale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/scale"
+        android:onClick="scaleAnimation"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btSequentially"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btSequentially" />
+
+    <Button
+        android:id="@+id/btRotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rotate"
+        android:onClick="rotateAnimation"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btTranslate"
+        app:layout_constraintEnd_toStartOf="@+id/btTranslate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btTranslate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:text="@string/translate"
+        android:onClick="translateAnimation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btFlip"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btRotate" />
+
+    <Button
+        android:id="@+id/btFlip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/flip"
+        android:onClick="flipAnimation"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btTranslate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btTranslate" />
+
+    <ImageView
+        android:id="@+id/targetImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/btSequentially"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@mipmap/wheel_round"
+        android:contentDescription="@string/wheel" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
